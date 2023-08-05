@@ -7,7 +7,7 @@ module.exports = {
         "login-page":
           "url('/src/assets/login_bg.PNG')",
         "logged-in":
-          "url('/src/assets/homescreen_bg.PNG')",
+          "url('/src/assets/homescreen.jpg')",
       },
     },
   },

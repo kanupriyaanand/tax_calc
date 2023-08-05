@@ -146,7 +146,7 @@ const HomeScreen = () => {
             component="div"
             sx={{ flexGrow: 1, marginLeft: "15px" }}
           >
-            RV College of Engineering
+            Income Tax Calculator
           </Typography>
 
           <Typography
@@ -164,11 +164,9 @@ const HomeScreen = () => {
           
 
           <Link className="underline mr-8" to="/upcomingEvents">
-            Events
+            Disclose Income Streams
           </Link>
-          <Link className="underline mr-8" to="/Achievements">
-            Achievements
-          </Link>
+          
           <Link className="underline mr-8" to={"/myProfile"}>
             My Profile
           </Link>
@@ -189,7 +187,7 @@ const HomeScreen = () => {
             onClick={handleOpen}
             className="bg-white text-black w-full p-3 rounded-xl text-lg font-semibold  hover:bg-gray-300"
           >
-            Register For Try-outs
+            Calculate tax
           </button>
         )}
         {isAdmin && (
@@ -211,7 +209,7 @@ const HomeScreen = () => {
           className="bg-white text-black w-full p-3 rounded-xl text-lg font-semibold hover:bg-gray-300"
           onClick={handleOpen3}
         >
-          My Try-outs Dates
+          View Tax Slabs
         </button>)}
       </div>
       <RegisterForTryouts
