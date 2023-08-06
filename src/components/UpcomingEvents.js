@@ -129,7 +129,7 @@ const UpcomingEvents = () => {
 
       <table className="table-auto bg-black flex flex-col opacity-75 mt-52 px-16 mx-16 text-white">
         <div className="flex w-[60vw] justify-between mt-3">
-          <span style={StyleSheet.bold} >Sports Events 2023</span>
+          <span style={StyleSheet.bold} >My Sources of Income</span>
           {<span
             onClick={handleOpen2}
             className="ml-10 cursor-pointer bg-blue-700 text-white px-3 py-2 rounded-lg"

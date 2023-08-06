@@ -109,11 +109,12 @@ const MyTryoutDates = ({ open, handleClose }) => {
       >
         <Box sx={style} >
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Dates for try-outs
+          <a href="https://staticweb-f5d2e.web.app//">click here to follow the link</a>
+          
           </Typography>
           
          
-          <div className="mt-2">
+          {/* <div className="mt-2">
           <table className="table overflow-x-auto" id="data-table">
           <thead>
             <tr className="grid-cols-2">
@@ -131,7 +132,7 @@ const MyTryoutDates = ({ open, handleClose }) => {
           
         </table>
            
-          </div>
+          </div> */}
           
         </Box>
       </Modal>

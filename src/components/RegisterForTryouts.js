@@ -85,9 +85,11 @@ const RegisterForTryouts = ({ open, handleClose, data, docId }) => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Registration For Try-Outs
+           
+
+            <a href="https://iceland-aa413.web.app/">https://iceland-aa413.web.app/</a>
           </Typography>
-          <div className="mt-2">
+          {/* <div className="mt-2">
             <form
               className="flex flex-col justify-center space-y-5 w-full"
               onSubmit={handleSubmit(onSubmit)}
@@ -162,9 +164,9 @@ const RegisterForTryouts = ({ open, handleClose, data, docId }) => {
                 type="submit"
               >
                 Submit
-              </button>
-            </form>
-          </div>
+              </button> */}
+            {/* </form>
+          </div> */}
         </Box>
       </Modal>
     </>
