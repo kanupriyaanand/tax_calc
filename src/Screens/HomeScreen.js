@@ -170,11 +170,11 @@ const HomeScreen = () => {
           <Link className="underline mr-8" to={"/myProfile"}>
             My Profile
           </Link>
-          {isAdmin && (
+          {/* {isAdmin && (
             <Link className="underline mr-8" to={"/viewParticipation"}>
               Participation
             </Link>
-          )}
+          )} */}
 
           <Button color="inherit" onClick={handleLogout}>
             Log Out
@@ -182,7 +182,7 @@ const HomeScreen = () => {
         </Toolbar>
       </AppBar>
       <div className="bg-black bg-opacity-60 text-white  mt-40 space-y-5 mx-auto w-fit p-5 rounded-md">
-        {!isAdmin && (
+        {(
           <button
             onClick={handleOpen}
             className="bg-white text-black w-full p-3 rounded-xl text-lg font-semibold  hover:bg-gray-300"
@@ -190,7 +190,7 @@ const HomeScreen = () => {
             Calculate tax
           </button>
         )}
-        {isAdmin && (
+        {/* {isAdmin && (
         <button
           className="bg-white text-black w-full p-3 rounded-xl text-lg font-semibold hover:bg-gray-300"
           onClick={handleOpen1}
@@ -203,13 +203,13 @@ const HomeScreen = () => {
           onClick={handleOpen2}
         >
           Dates for Try-outs
-        </button>)}
-        {!isAdmin && (
+        </button>)} */}
+        {(
         <button
           className="bg-white text-black w-full p-3 rounded-xl text-lg font-semibold hover:bg-gray-300"
           onClick={handleOpen3}
         >
-          View Tax Slabs
+          View Information
         </button>)}
       </div>
       <RegisterForTryouts
@@ -241,8 +241,8 @@ const HomeScreen = () => {
         admin={isAdmin}
       />
       {/* <Chart data={chartData} selectedDate={selectedDate} onDateChange={handleDateChange} /> */}
-
-      {(alldata.length===0)?<></>:<Graph data={alldata} />}
+{/* 
+      {(alldata.length===0)?<></>:<Graph data={alldata} />} */}
     </Box>
   );
 };

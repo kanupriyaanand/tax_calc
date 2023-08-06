@@ -30,12 +30,13 @@ const AddEvent = ({ open, handleClose, data, docId }) => {
   const onSubmit = async (dataForm) => {
    
     try {
-      const CollectionRef = doc(db, `Upcoming_Tournaments/${dataForm.Date}`);
+      console.log("clicked")
+      const CollectionRef = doc(db, `Income_Streams/${dataForm.source}`);
       await setDoc(CollectionRef, dataForm);
       toast.success("Updated Successfully");
       reset();
 
-      const collectionRef = collection(db, dataForm.Date);
+      const collectionRef = collection(db, dataForm.Email);
      
         
     //    await addDoc(collectionRef, { ...data, dataForm });
@@ -59,7 +60,7 @@ const AddEvent = ({ open, handleClose, data, docId }) => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Add tournament
+            Add Income Stream
           </Typography>
           <div className="mt-2">
             <form
@@ -71,34 +72,27 @@ const AddEvent = ({ open, handleClose, data, docId }) => {
               <input
                 className="px-3 py-2 rounded-md"
                 type="text"
-                {...register("Name")}
-                placeholder="Enter event name"
+                {...register("Email")}
+                placeholder="Confirm your email address"
                 required
               />
 
               <input
                 className="px-3 py-2 rounded-md"
                 type="text"
-                {...register("Venue")}
-                placeholder="enter venue"
+                {...register("source")}
+                placeholder="Enter new source of income"
                 required
               />
 
-              <input
-                className="px-3 py-2 rounded-md"
-                type="date"
-                {...register("Date")}
-                min="2023-03-29"
-                placeholder="enter event date"
-                required
-              />
-
+              
             
               <button
                 className="px-3 py-2 rounded-md bg-blue-900 text-white"
                 type="submit"
               >
                 Submit
+                
               </button>
             </form>
           </div>

@@ -57,7 +57,7 @@ const [docId, setDocId] = useState("");
 
   useEffect(() => {
     const getUserData = async () => {
-        const userData = collection(db, "studentUsers");
+        const userData = collection(db, "Users");
         const docSnap = await getDocs(
           query(userData, where("Email", "==", userVal.email))
         );
@@ -113,7 +113,7 @@ const [docId, setDocId] = useState("");
 
   async function handleUpdate() {
   
-    const CollectionRef = doc(db, "studentUsers", docId);
+    const CollectionRef = doc(db, "Users", docId);
     try {
       
     await updateDoc(CollectionRef, {First_name: firstName,Last_name: lastName,semester: semester,Mobile_number: mobilenumber, Username: username,USN: usn,date_of_birth: dateofbirth});

@@ -47,7 +47,7 @@ const RegisterForTryouts = ({ open, handleClose, data, docId }) => {
   const onSubmit = async (dataForm) => {
     console.log(dataForm);
     try {
-      const CollectionRef = doc(db, "studentUsers", docId);
+      const CollectionRef = doc(db, "Users", docId);
       await updateDoc(CollectionRef, dataForm);
       reset();
 

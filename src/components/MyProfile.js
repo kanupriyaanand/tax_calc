@@ -40,7 +40,7 @@ const MyProfile = () => {
   }
 
   const getUserData = async () => {
-    const userData = collection(db, "studentUsers");
+    const userData = collection(db, "Users");
     const docSnap = await getDocs(
       query(userData, where("Email", "==", userVal.email))
     );
@@ -111,11 +111,11 @@ const MyProfile = () => {
           <Link className="underline mr-8" to={"/myProfile"}>
             My Profile
           </Link>
-          {isAdmin && (
+          {/* {isAdmin && (
             <Link className="underline mr-8" to={"/viewParticipation"}>
               Participation
             </Link>
-          )}
+          )} */}
 
           <Button color="inherit" onClick={handleLogout}>
             Log Out
@@ -157,7 +157,7 @@ const MyProfile = () => {
           <input
             type="text"
             className="px-3 py-2 rounded-md"
-            placeholder="User?name"
+            placeholder="Username"
             defaultValue={user?.Username}
             disabled
           />
@@ -170,14 +170,7 @@ const MyProfile = () => {
             <option value="F">F</option>
             <option value="others">Others</option>
           </select>
-          <input
-            defaultValue={user?.semester}
-            disabled
-            className="px-3 py-2 rounded-md"
-            type="undefined"
-            placeholder="Semester"
-          />
-
+          
           <input
             defaultValue={user?.date_of_birth}
             disabled
@@ -186,26 +179,20 @@ const MyProfile = () => {
             placeholder="Date of Birth"
           />
           <input
-            defaultValue={user?.department}
+            defaultValue={user?.type}
             disabled
             className="px-3 py-2 rounded-md"
             type="text"
-            placeholder="Department"
+            placeholder="type"
           />
           <input
-            defaultValue={user?.USN}
+            defaultValue={user?.Aadhaar}
             disabled
             className="px-3 py-2 rounded-md"
             type="text"
-            placeholder="USN"
+            placeholder="Aadhaar"
           />
-          <input
-            defaultValue={user?.Counselor_email}
-            disabled
-            className="px-3 py-2 rounded-md"
-            type="email"
-            placeholder="Counselor email"
-          />
+          
           <button onClick={handleEditClick} className="px-3 py-2 rounded-md bg-blue-900 text-white">Edit Profile</button>
         </form>
         

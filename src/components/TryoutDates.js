@@ -46,7 +46,7 @@ const TryoutDates = ({ open, handleClose }) => {
     setData(users);
   };
   const getUserDataagain = async () => {
-    const userData = collection(db, "studentUsers");
+    const userData = collection(db, "Users");
     const docSnap = await getDocs(
       query(userData, where("Email", "==", user.email))
     );

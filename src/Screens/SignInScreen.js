@@ -28,6 +28,7 @@ const SignInScreen = ({ setSignIn }) => {
         try {
           const StudentDocRef = addDoc(collection(db, "Users"), data);
           console.log(StudentDocRef);
+
         } catch (e) {
           console.log(e);
         }
@@ -119,6 +120,7 @@ const SignInScreen = ({ setSignIn }) => {
           placeholder="Password"
           {...register("password", { required: true })}
         />
+        
         <select
           className="px-3 py-2 rounded-md"
           {...register("gender")}
@@ -131,27 +133,7 @@ const SignInScreen = ({ setSignIn }) => {
           <option value="F">F</option>
           <option value="others">Others</option>
         </select>
-        {/* <input
-          className="px-3 py-2 rounded-md"
-          type="number"
-          min={1}
-          max={8}
-          placeholder="Semester"
-          {...register("semester", {
-            required: true,
-            maxLength: { value: 1, message: "enter a number between 1 and 8" },
-            min: {
-              value: 1,
-              message: "Enter a value greater than or equal to 1",
-            },
-            max: {
-              value: 8,
-              message: "Enter a value less than or equal to 8",
-            },
-          })}
-        />
-        <div className="text-red-700">{errors.semester?.message}</div>
-        <h1 className="text-left mb-1 text-white text-1x0.5">DOB</h1> */}
+        
         <input
           className="px-3 py-2 rounded-md"
           type="date"
