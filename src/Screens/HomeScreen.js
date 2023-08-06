@@ -55,7 +55,7 @@ const HomeScreen = () => {
   const handleOpen3 = () => setOpen3(true);
   const handleClose3 = () => setOpen3(false);
   const getUserData = async () => {
-    const userData = collection(db, "studentUsers");
+    const userData = collection(db, "Users");
     const docSnap = await getDocs(
       query(userData, where("Email", "==", user.email))
     );

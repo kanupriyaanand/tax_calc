@@ -10,7 +10,7 @@ import Achievements from "./components/Achievements";
 import NotFound from "./components/NotFound";
 import MyProfile from "./components/MyProfile";
 import ViewParticipation from "./components/ViewParticipation";
-import Chatbot from "./components/Chatbot";
+
 import EditProfile from "./components/EditProfile";
 
 
@@ -63,7 +63,7 @@ function App() {
           </Routes>
         </Router>
       )}
-      <Chatbot/>
+    
     </div>
     
   );

@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "login-page":
-          "url('/src/assets/login_bg.PNG')",
+          "url('/src/assets/login_bg.jpg')",
         "logged-in":
           "url('/src/assets/homescreen.jpg')",
       },

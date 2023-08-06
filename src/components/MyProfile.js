@@ -103,11 +103,11 @@ const MyProfile = () => {
           </Typography>
 
           <Link className="underline mr-8" to="/upcomingEvents">
-            Events
+            Disclose Income Streams
           </Link>
-          <Link className="underline mr-8" to="/Achievements">
+          {/* <Link className="underline mr-8" to="/Achievements">
             Achievements
-          </Link>
+          </Link> */}
           <Link className="underline mr-8" to={"/myProfile"}>
             My Profile
           </Link>

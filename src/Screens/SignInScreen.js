@@ -15,21 +15,10 @@ const SignInScreen = ({ setSignIn }) => {
   } = useForm();
 
   const departmentNames = [
-    "AS",
-    "ISE",
-    "CS",
-    "EC",
-    "ET",
-    "ME",
-    "CV",
-    "IM",
-    "M.Tech",
-    "MCA",
-    "BT",
-    "CH",
-    "EI",
-    "EE",
-    "AIML",
+    "Government worker",
+    "Private Worker",
+    "Other",
+    
   ];
   const onSubmit = async (data) => {
     console.log(data);
@@ -37,7 +26,7 @@ const SignInScreen = ({ setSignIn }) => {
       .then(async (authUser) => {
         toast.success("User Created Successfully");
         try {
-          const StudentDocRef = addDoc(collection(db, "studentUsers"), data);
+          const StudentDocRef = addDoc(collection(db, "Users"), data);
           console.log(StudentDocRef);
         } catch (e) {
           console.log(e);
@@ -89,7 +78,7 @@ const SignInScreen = ({ setSignIn }) => {
             required: true,
             pattern: {
               value: /^\S+@rvce.edu.in+$/i,
-              message: "enter a valid RVCE email number",
+              message: "enter a valid email ID",
             },
           })}
         />
@@ -142,7 +131,7 @@ const SignInScreen = ({ setSignIn }) => {
           <option value="F">F</option>
           <option value="others">Others</option>
         </select>
-        <input
+        {/* <input
           className="px-3 py-2 rounded-md"
           type="number"
           min={1}
@@ -162,7 +151,7 @@ const SignInScreen = ({ setSignIn }) => {
           })}
         />
         <div className="text-red-700">{errors.semester?.message}</div>
-        {/* <h1 className="text-left mb-1 text-white text-1x0.5">DOB</h1> */}
+        <h1 className="text-left mb-1 text-white text-1x0.5">DOB</h1> */}
         <input
           className="px-3 py-2 rounded-md"
           type="date"
@@ -176,55 +165,33 @@ const SignInScreen = ({ setSignIn }) => {
         
         <select
           className="px-3 py-2 rounded-md"
-          {...register("department")}
+          {...register("type")}
           required
         >
           <option value={null} selected disabled hidden>
-          Select Department
+          Select Place of Employment
           </option>
-          <option value="AS">AS</option>
-          <option value="AIML">CS</option>
-          <option value="CH">CH</option>
-          <option value="CS">CS</option>
-          <option value="CV">CV</option>
-          <option value="DS">DS</option>
-          <option value="EC">EC</option>
-          <option value="EE">EE</option>
-          <option value="EI">EI</option>
-          <option value="ET">ET</option>
-          <option value="IS">IS</option>
-          <option value="IM">IM</option>
-          <option value="ME">ME</option>
-          <option value="MCA">MCA</option>
-          <option value="M.Tech">M.Tech</option>
+          <option value="Goverment employee">Goverment employee</option>
+          <option value="Private worker">Private worker</option>
+          <option value="Other">Other</option>
+          
 
         </select>
         <input
           className="px-3 py-2 rounded-md"
           type="text"
-          placeholder="USN"
-          {...register("USN", {
+          placeholder="Aadhaar number"
+          {...register("Aadhaar", {
             required: true,
             pattern: {
-              value: /(?:1RV)(?:\d)(?:\d)(?:[A-Z])(?:[A-Z])(?:\d)(?:\d)(?:\d)$/,
-              message: "Please enter a valid USN",
+              value: /(?:\d)(?:\d)(?:\d)(?:\d)(?:\d)(?:\d)(?:\d)(?:\d)(?:\d)(?:\d)(?:\d)(?:\d)$/,
+              message: "Please enter a valid Aadhaar",
             },
-            maxLength: { value: 10, message: "enter valid USN" },
+            maxLength: { value: 12, message: "enter valid number" },
           })}
         />
-        <div className="text-red-700">{errors.USN?.message}</div>
-        <input
-          className="px-3 py-2 rounded-md"
-          type="email"
-          placeholder="Counselor email"
-          {...register("Counselor_email", {
-            required: true,
-            pattern:{value:/^\S+@rvce.edu.in+$/i,
-            message: "Please enter RVCE email"}
-          })}
-          
-        />
-        <div className="text-red-700">{errors.Counselor_email?.message}</div>
+        <div className="text-red-700">{errors.Aadhaar?.message}</div>
+        
         <button
           className="px-3 py-2 rounded-md bg-blue-900 text-white"
           type="submit"

@@ -27,7 +27,7 @@ function LoginScreen() {
             component="div"
             sx={{ flexGrow: 1, marginLeft: "15px" }}
           >
-            RV College of Engineering
+            Tax Calculation Website
           </Typography>
           {!signUp ? (
             <Button color="inherit" onClick={handleSignUp}>
